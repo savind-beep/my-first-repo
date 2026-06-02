@@ -16,6 +16,9 @@ GS=BC+OT+B
 TD=GS*(T/100)
 NS=GS-TD
 print("The net salary is:",NS)
+print("The net salary is:",NS)'''
+
+'''A=int(input("Enter the first number:"))
 B=int(input("Enter the second number:"))
 C=0
 print=(A,B)

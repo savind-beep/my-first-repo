@@ -6,7 +6,7 @@ FU=float(D/FA)
 TC=FU*FP+HC
 print("The total cost of the trip is:",TC)'''
 
-BC=float(input("enter the bacsic salary:"))
+'''BC=float(input("enter the bacsic salary:"))
 OH=float(input("enter the over time hours:"))
 OR=float(input("enter the over time rate:"))
 B=float(input("enter the bonus:"))
@@ -90,4 +90,4 @@ elif OP=='/':
     result=FN/SN
     print("The result is:",result)
 else:
-    print("Invalid operator") '''  
+    print("Invalid operator")'''  

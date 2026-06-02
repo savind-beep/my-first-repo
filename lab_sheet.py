@@ -91,3 +91,8 @@ elif OP=='/':
     print("The result is:",result)
 else:
     print("Invalid operator")'''  
+#calori count 
+'''ED=int(input("enter the exercise duration in minutes:"))
+CBC=float(input("enter the calories burned per minute:"))
+TC=ED*CBC            
+print("The total calories burned is:",TC)'''

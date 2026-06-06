@@ -95,4 +95,51 @@ else:
 '''ED=int(input("enter the exercise duration in minutes:"))
 CBC=float(input("enter the calories burned per minute:"))
 TC=ED*CBC            
-print("The total calories burned is:",TC)'''
+print("The total calories burned is:",TC)')'''
+
+''''SA=int(input("Enter the Attendance: "))
+if SA>=80:
+    AM=int(input("Enter the Average Mark: "))
+    if AM>75:
+        print("scholarship granted")
+    else:        print("scholarship not granted")
+else:   
+    print("insufficient attendance, scholarship not granted")'''
+
+'''PM=str(input("premium member (yes/no):" ))
+if PM=="yes": 
+       print("discount applied")
+       BA=float(input("Enter the bill amount:"))
+       if BA>=10000:
+              TBM=BA*(20/100)
+              print("The total bill amount is:",TBM)
+            
+         else:              
+            TBM=BA*(10/100)
+            print("The total bill amount is:",TBM)  
+else:
+    print("no discount applied")
+    BA=float(input("Enter the bill amount:"))
+    print("The total bill amount is:",BA)'''
+
+
+'''PS=int(input("Enter the performance score:"))
+if PS>=85:
+    SY=int(input("Enter the years of service:"))
+    if SY>3:
+        print("Promotion approved")
+    else:        print("more experience required")
+else:  
+     print("Promotion not approved") '''
+
+UC=int(input("Enter the units consumed:"))
+if 0<=UC<=30:
+    TBL=UC*20
+    print("The total bill amount is:",TBL)
+elif 31<=UC<=60:
+    TBL=30*20+(UC-30)*40
+    print("The total bill amount is:",TBL)
+elif 60<UC: 
+    TBL=30*20+(30*40)+(UC-60)*60
+    print("The total bill amount is:",TBL)  
+    

@@ -132,7 +132,7 @@ if PS>=85:
 else:  
      print("Promotion not approved") '''
 
-UC=int(input("Enter the units consumed:"))
+'''UC=int(input("Enter the units consumed:"))
 if 0<=UC<=30:
     TBL=UC*20
     print("The total bill amount is:",TBL)
@@ -141,5 +141,5 @@ elif 31<=UC<=60:
     print("The total bill amount is:",TBL)
 elif 60<UC: 
     TBL=30*20+(30*40)+(UC-60)*60
-    print("The total bill amount is:",TBL)  
+    print("The total bill amount is:",TBL)'''  
     

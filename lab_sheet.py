@@ -141,5 +141,50 @@ elif 31<=UC<=60:
     print("The total bill amount is:",TBL)
 elif 60<UC: 
     TBL=30*20+(30*40)+(UC-60)*60
-    print("The total bill amount is:",TBL)'''  
-    
+    print("The total bill amount is:",TBL)'''
+
+'''EA=int(input("Enter your Age"))
+CIT=str(input("Are you Citzen in sri lanka "))
+if EA  >=18:
+ if CIT=="yes":
+  print("your Eligible to vote ")
+ else :
+  print("you are not eligible to vote ")
+else:
+ print("you are not eligible to vote ")'''
+
+
+'''PIN=int(input("Enter the pin number:")) 
+AB=20000
+if PIN==1234:
+    print("Access granted") 
+    WB=float(input("Enter the withdrawal amount:"))
+    if WB<=AB:
+        AB=AB-WB
+        print("Withdrawal successful. Remaining balance:",AB)
+    else:
+        print("Insufficient balance. Withdrawal denied.")   
+else:  
+     print("Access denied. Incorrect pin number.")'''
+
+'''SM=int(input("Enter the marks:"))
+FI=float(input("enter the family income:"))
+if SM>=75:
+    if FI<50000:
+        print("Scholarship granted")
+    else:        print("Scholarship not granted due to high family income")
+else:  
+        print("Scholarship not granted due to low marks")'''   
+
+'''RE=str(input("are you registered:"))
+EF=str(input("DID you pay the exam fee:"))
+if RE=="yes" and EF=="yes":
+    print("you are eligible to sit for the exam")
+else:   
+      print("you are not eligible to sit for the exam")'''
+
+
+
+      
+
+

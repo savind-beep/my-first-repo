@@ -182,9 +182,65 @@ if RE=="yes" and EF=="yes":
     print("you are eligible to sit for the exam")
 else:   
       print("you are not eligible to sit for the exam")'''
+'''RA=str(input("are ther eny rooms avelble "))
+if RA=="yes":
+    ID=str(input("DO you have id :"))
+    if ID=="yes":
+        HF=int(input("did they pay the Advance:"))
+        if HF=="yes":
+         SD=int(input("how many days do you want to stay:"))
+          if SD>=1:
+            print("room booked successfully")   
+          else:
+            print("invalid number of days")
+        else:
+            print("advance payment required to book the room")
+    else:     
+       print("ID required to book the room")  
+else:   
+   print("no rooms available")'''            
+
+
+'''YN=str(input("enter your name:"))
+C=0
+while C<5:
+    print("my name is ",YN)
+    C=C+1'''
+
+'''N=int(input("enter the number:"))
+C=0
+while C<=5:
+    print(N)
+    N=N+1
+    C=C+1'''
+
+'''N=int(input("enter the number:"))
+while N!=20:
+    print(N)
+    N=N+2'''
+    
+
+'''N=int(input("enter the number:"))
+while N!=0:
+    print(N)
+    N=N-6'''
+
+'''N=int(input("enter the number:"))
+while N!=11:
+    MV=N*N
+    print(MV)
+    N=N+1'''#
+
+C=0
+while C<=10:
+    T=int(input("enter the number:"))
+    FT=FT+T
+    C=C+1
+    print("the total sum is:",FT)
 
 
 
-      
+        
+
 
 

@@ -230,8 +230,7 @@ while N!=11:
     MV=N*N
     print(MV)
     N=N+1'''#
-
-C=0
+'''C=0
 while C<=10:
     T=int(input("enter the number:"))
     FT=FT+T
@@ -239,7 +238,69 @@ while C<=10:
     print("the total sum is:",FT)
 
 
+BW=int(input("enter the beggege weight:"))
+if BW<=20:
+    print("no extra charge")    
+elif 20<BW<=30:
+    EC=(BW-20)*200
+    print("the extra charge is:",EC)
+elif BW>30:
+    print("this baggege is not allowed")
 
+MS=int(input("enter the salary:"))
+if 50000<=MS<=99999:
+    IT=MS*(10/100)
+    print("your bonus is:",IT)
+elif MS>=100000:
+    IT=MS*(15/100)
+    print("your bonus is:",IT)
+else: MS<50000    
+IT=MS*(5/100)
+print("your bonus is:",IT)
+
+
+C=0
+while C<=10:
+    M=int(input("enter the marks:"))
+    TM=TM+M
+    C=C+1
+AV=TM/10
+if AV>=50:
+    print("passed") 
+else:  
+    print("failed")
+
+
+
+while N!=(-1):
+    N=int(input("enter the number:"))
+    TN=TN+N
+print("the total sum is:",TN)
+
+
+W=str(input("enter the word:"))
+W=W.lower()
+C=0
+for i in range(len(W)):
+    if W[i] in {'a','e','i','o','u'}:
+        C=C+1
+print("the number of vowels in the word is:",C)'''
+
+'''N=int(input("enter the number:"))
+TN=1
+while N!=0:
+    TN=N*TN
+    N=N-1
+print("the factorial of the number is:",TN)
+
+
+while N!=(-1):
+  Age=int(input("enter the age:"))
+  if Age>=18:
+        print("eligible to vote")
+        else:  
+        print("not eligible to vote")
+print("program ended")'''
         
 
 

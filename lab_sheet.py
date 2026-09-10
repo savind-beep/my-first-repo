@@ -301,7 +301,114 @@ while N!=(-1):
         else:  
         print("not eligible to vote")
 print("program ended")'''
-        
 
 
+'''I=0
+while I>= 5:
+    J=5
+    while J>=0:
+        print("*",end="")
+        J=J-1
+print ("\n")
+I=I+1'''
 
+
+'''C=1
+TC=0
+while C<=5:
+    TC=TC+C
+    C=C+1
+print(TC)'''
+
+'''TC=0
+C=1
+while C<=5:
+    A=int(input("enter the number"))
+    TC=TC+A
+    C=C+1
+print("youer totle is",TC)'''
+
+'''O=E=0
+C=1
+while C<=5:
+    NUM=int(input("enter your number "))
+    if NUM%2==0:
+        E=E+1
+    else:
+        O=O+1
+    C=C+1
+print("even num",E) 
+print("odd num",O)'''
+
+'''C=1
+while C<=3:
+    B=1
+    while B<=3:
+      print(B,end=" ")
+      B=B+1
+      
+    C=C+1
+    print()'''
+
+'''C=1
+while C<=5:
+    B=1
+    while B<=4:
+      print("*",end=" ")
+      B=B+1
+      
+    C=C+1
+    print()'''
+
+'''for i  in range(1,5):
+    for J in range (i):
+        print("*",end= " ")
+    print()'''
+
+'''TC=1
+N=int(input ("enteryou number "))
+while N!=1:
+    TC=TC*N
+    N=N-1
+print(TC)'''
+
+'''TC=1
+I=int(input("enter youer num"))
+for I in range (0+1,I):
+    TC=TC*I
+print(TC)'''
+
+'''N = int(input("Enter the number: "))
+
+if N <= 1:
+    print("This number is not prime")
+elif N == 2:
+    print("This number is prime")
+elif N % 2 == 0:
+    print("This number is not prime")
+else:
+    print("This number is prime")'''
+
+
+'''TS=C=0
+D_sales=[]
+while C<=7:
+    S=int(input("enter the daily sales"))
+    D_sales.append(S)
+    C=C+1
+print(D_sales)'''
+
+M_N=[]
+T_P=[]
+S_N=[]
+x=int(input("enter the key:"))
+while x!=0:
+    M_N.append(str(input("enter the movie name:")))
+    T_P.append(float(input("enter the Ticket price :")))
+    S_N.append(float(input("enter the booked seats number:")))
+    x=int(input("enter the key:"))
+    
+print(f"{'MOVIE NAME':<15}{'TICKET PRICE':<15}{'BOOKED SEATS':<15}")
+print ("-"*50)
+for i in range(len(M_N)):
+    print(f"{M_N[i]:<15}{T_P[i]:<15}{S_N[i]:<15}")

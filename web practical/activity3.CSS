@@ -1,0 +1,89 @@
+/* General Page Layout */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #a8ffeb; /* Light cyan background matching your current page */
+  color: #1a3c34;
+  margin: 0;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Page Heading */
+h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  text-transform: capitalize;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* Image Styling */
+img {
+  max-width: 600px;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  display: block;
+}
+
+/* Button / Link Styling */
+a,
+button {
+  display: inline-block;
+  background-color: #0b6637;
+  color: #ffffff;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 20px 0 30px 0;
+  transition:
+    background-color 0.2s ease,
+    transform 0.1s ease;
+  cursor: pointer;
+}
+
+a:hover,
+button:hover {
+  background-color: #084d29;
+  transform: translateY(-2px);
+}
+
+/* Table Styling */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 700px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 10px;
+}
+
+th,
+td {
+  padding: 14px 18px;
+  text-align: left;
+}
+
+th {
+  background-color: #0b6637;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+tr:nth-child(even) {
+  background-color: #f4fbf8;
+}
+
+tr:hover {
+  background-color: #e2f7ef;
+}

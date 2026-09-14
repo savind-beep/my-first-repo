@@ -1,5 +1,6 @@
-public class  main {
-	public static void main(String[] args) {
-		System.out.println("Hello, World!");
-	}
+car car = new car();
+    System.out.println(car.model);
+    System.out.println(car.year);
+    System.out.println(car.price);
+    System.out.println(car.isrunning);
 }

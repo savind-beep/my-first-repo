@@ -1,89 +1,169 @@
-/* General Page Layout */
+* {
+  box-sizing: border-box;
+}
+
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #a8ffeb; /* Light cyan background matching your current page */
-  color: #1a3c34;
   margin: 0;
-  padding: 40px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 16px;
+  padding: 0 20px;
+  font-size: 15px;
+  letter-spacing: 1px;
 }
 
-/* Page Heading */
-h1 {
-  font-size: 2.2rem;
-  font-weight: 700;
-  text-transform: capitalize;
-  margin-bottom: 30px;
-  text-align: center;
-}
-
-/* Image Styling */
-img {
-  max-width: 600px;
+.form-wrapper {
   width: 100%;
-  height: auto;
-  border-radius: 12px;
-  margin-bottom: 20px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  display: block;
+  padding: 40px 40px 0 40px;
 }
 
-/* Button / Link Styling */
-a,
+h1 {
+  font-size: 62px;
+  line-height: 1.1;
+  margin: 0 0 18px 0;
+  font-weight: 700;
+  color: #2b221d;
+  letter-spacing: 0.5px;
+}
+
+.form-box {
+  width: 76%;
+  min-height: 620px;
+  border: 2px solid rgba(44, 34, 31, 0.75);
+  background: rgba(230, 228, 226, 0.5);
+  padding: 18px 26px 18px 26px;
+  margin-left: 14px;
+}
+
+.section-title,
+.gender-title,
+.address-label {
+  display: block;
+  font-size: 27px;
+  line-height: 1.4;
+  color: #2e2824;
+  margin: 8px 0 14px;
+  font-weight: 400;
+}
+
+.section-title {
+  border-bottom: 2px solid rgba(52, 44, 39, 0.7);
+  padding-bottom: 8px;
+  margin-bottom: 16px;
+  width: 100%;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+  display: block;
+  width: 100%;
+  border: 2px solid rgba(28, 22, 20, 0.75);
+  background: rgba(245, 244, 242, 0.3);
+  color: #2b201d;
+  font-size: 23px;
+  line-height: 1.4;
+  padding: 12px 16px;
+  margin: 12px 0 18px;
+  border-radius: 0;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: rgba(45, 38, 34, 0.7);
+}
+
+.gender-block {
+  margin: 16px 0 10px;
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 24px;
+  margin: 6px 0;
+  color: #2a201e;
+}
+
+.radio-option input[type="radio"] {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(35, 27, 24, 0.75);
+  border-radius: 50%;
+  background: transparent;
+  display: inline-block;
+  position: relative;
+  margin: 0;
+}
+
+.radio-option input[type="radio"]:checked::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background: #2a201d;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.address-label {
+  margin-top: 18px;
+}
+
+textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
 button {
   display: inline-block;
-  background-color: #0b6637;
-  color: #ffffff;
-  padding: 12px 24px;
-  border: none;
-  border-radius: 6px;
-  font-weight: 600;
-  text-decoration: none;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  margin: 20px 0 30px 0;
-  transition:
-    background-color 0.2s ease,
-    transform 0.1s ease;
+  margin-top: 14px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(31, 23, 20, 0.75);
+  color: #1f1714;
+  font-size: 26px;
+  font-family: Georgia, "Times New Roman", serif;
+  padding: 8px 24px 6px;
+  text-transform: lowercase;
   cursor: pointer;
 }
 
-a:hover,
 button:hover {
-  background-color: #084d29;
-  transform: translateY(-2px);
+  background: rgba(0, 0, 0, 0.04);
 }
 
-/* Table Styling */
-table {
-  border-collapse: collapse;
-  width: 100%;
-  max-width: 700px;
-  background-color: #ffffff;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  margin-top: 10px;
-}
+@media (max-width: 768px) {
+  .form-wrapper {
+    padding: 20px 18px 0;
+  }
 
-th,
-td {
-  padding: 14px 18px;
-  text-align: left;
-}
+  h1 {
+    font-size: 42px;
+  }
 
-th {
-  background-color: #0b6637;
-  color: #ffffff;
-  font-weight: 600;
-}
+  .form-box {
+    width: 100%;
+    margin-left: 0;
+    padding: 16px 14px;
+  }
 
-tr:nth-child(even) {
-  background-color: #f4fbf8;
-}
+  .section-title,
+  .gender-title,
+  .address-label {
+    font-size: 22px;
+  }
 
-tr:hover {
-  background-color: #e2f7ef;
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  textarea {
+    font-size: 19px;
+  }
 }

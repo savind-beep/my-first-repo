@@ -4,8 +4,24 @@
 
 body {
   margin: 0;
+  background: #c9c3bf;
+  font-family: Georgia, "Times New Roman", serif;
+  color: #2a201d;
+}
+
+.page-shell {
+  width: 100%;
+  min-height: 100vh;
+  background: #d9d6d3;
+  border-top: 10px solid #2a1d1a;
+}
+
+.top-bar {
+  height: 44px;
+  background: rgba(42, 29, 26, 0.82);
+  color: #efe7df;
   display: flex;
-  flex-direction: column;
+  justify-content: flex-end;
   align-items: center;
   gap: 16px;
   padding: 0 20px;

@@ -1,0 +1,648 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#080c18" />
+    <meta
+      name="description"
+      content="Browse local and trending stories about emerging technology."
+    />
+    <title>News | Future / Form</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        --ink: #f3f5ff;
+        --muted: #a8b0c5;
+        --surface: #11182a;
+        --line: rgba(255, 255, 255, 0.1);
+        --accent: #9af2d0;
+        --violet: #b7a4ff;
+        font-family:
+          Inter,
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          sans-serif;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        background: #080c18;
+        color: var(--ink);
+      }
+      a {
+        color: inherit;
+      }
+      .container {
+        width: min(1160px, calc(100% - 48px));
+        margin-inline: auto;
+      }
+      .site-header {
+        position: absolute;
+        z-index: 5;
+        inset: 0 0 auto;
+        height: 82px;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      }
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+      }
+      .brand {
+        display: inline-flex;
+        gap: 11px;
+        align-items: center;
+        text-decoration: none;
+        font-size: 0.92rem;
+        font-weight: 750;
+        letter-spacing: 0.02em;
+      }
+      .brand-mark {
+        display: grid;
+        width: 34px;
+        height: 34px;
+        place-items: center;
+        border-radius: 11px;
+        color: #07120f;
+        background: var(--accent);
+        font-size: 1.1rem;
+      }
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 32px;
+      }
+      .nav-links a {
+        color: #d6d9e5;
+        font-size: 0.9rem;
+        text-decoration: none;
+        transition: color 0.2s ease;
+      }
+      .nav-links a:hover,
+      .nav-links a[aria-current="page"] {
+        color: var(--accent);
+      }
+      .nav-cta {
+        padding: 10px 16px;
+        border: 1px solid rgba(255, 255, 255, 0.24);
+        border-radius: 999px;
+      }
+      .hero {
+        min-height: 560px;
+        position: relative;
+        isolation: isolate;
+        display: grid;
+        align-items: center;
+        overflow: hidden;
+        background: #11162a;
+      }
+      .hero::before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        inset: 0;
+        background:
+          linear-gradient(90deg, rgba(7, 10, 22, 0.95), rgba(7, 10, 22, 0.6)),
+          linear-gradient(0deg, #080c18 0%, transparent 42%);
+      }
+      .hero-video {
+        position: absolute;
+        z-index: -2;
+        width: 100%;
+        height: 100%;
+        inset: 0;
+        object-fit: cover;
+        opacity: 0.62;
+      }
+      .hero-content {
+        max-width: 760px;
+        padding-top: 110px;
+      }
+      .eyebrow,
+      .section-kicker {
+        margin: 0 0 14px;
+        color: var(--accent);
+        font-size: 0.75rem;
+        font-weight: 750;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+      }
+      h1 {
+        margin: 0;
+        font-size: clamp(3.5rem, 8vw, 6.3rem);
+        line-height: 0.98;
+        letter-spacing: -0.065em;
+      }
+      h1 span {
+        color: var(--accent);
+      }
+      .hero-copy {
+        max-width: 570px;
+        margin: 23px 0 0;
+        color: #c1c7d8;
+        font-size: 1.08rem;
+        line-height: 1.75;
+      }
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 13px;
+        margin-top: 29px;
+      }
+      .button {
+        display: inline-flex;
+        min-height: 48px;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 0 19px;
+        border: 1px solid transparent;
+        border-radius: 999px;
+        font-size: 0.91rem;
+        font-weight: 700;
+        text-decoration: none;
+        transition:
+          transform 0.2s ease,
+          background 0.2s ease;
+      }
+      .button:hover {
+        transform: translateY(-2px);
+      }
+      .button-primary {
+        color: #07120f;
+        background: var(--accent);
+      }
+      .button-primary:hover {
+        background: #b7f9e2;
+      }
+      .button-quiet {
+        border-color: rgba(255, 255, 255, 0.28);
+        background: rgba(255, 255, 255, 0.06);
+      }
+      .content {
+        width: min(980px, calc(100% - 48px));
+        margin: 0 auto;
+        padding: 50px 0 72px;
+      }
+      .category-nav {
+        display: flex;
+        gap: 28px;
+        align-items: center;
+        border-bottom: 1px solid var(--line);
+      }
+      .category-nav a {
+        position: relative;
+        padding: 0 4px 16px;
+        color: var(--muted);
+        font-size: 0.93rem;
+        font-weight: 700;
+        text-decoration: none;
+      }
+      .category-nav a:hover,
+      .category-nav a[aria-current="page"] {
+        color: var(--accent);
+      }
+      .category-nav a[aria-current="page"]::after {
+        position: absolute;
+        right: 0;
+        bottom: -1px;
+        left: 0;
+        height: 2px;
+        background: var(--accent);
+        content: "";
+      }
+      .section {
+        padding-top: 36px;
+        scroll-margin-top: 28px;
+      }
+      .story-search {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-top: 24px;
+        padding: 0 16px;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        color: var(--muted);
+        background: var(--surface);
+      }
+      .story-search span {
+        color: var(--accent);
+        font-size: 1.15rem;
+      }
+      .story-search input {
+        width: 100%;
+        min-height: 52px;
+        border: 0;
+        outline: 0;
+        color: var(--ink);
+        background: transparent;
+        font: inherit;
+      }
+      .story-search input::placeholder {
+        color: #8993ab;
+      }
+      .search-status {
+        min-height: 1.5em;
+        margin: 12px 2px 0;
+        color: var(--muted);
+        font-size: 0.82rem;
+      }
+      .empty-state {
+        margin: 0;
+        padding: 22px;
+        border: 1px dashed rgba(255, 255, 255, 0.2);
+        border-radius: 14px;
+        color: var(--muted);
+        text-align: center;
+      }
+      [hidden] {
+        display: none !important;
+      }
+      .section-label {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin: 0 0 20px;
+        color: var(--violet);
+        font-size: 0.75rem;
+        font-weight: 750;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+      }
+      .section-label::after {
+        height: 1px;
+        flex: 1;
+        background: var(--line);
+        content: "";
+      }
+      .featured {
+        padding: clamp(22px, 4vw, 36px);
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background:
+          radial-gradient(
+            ellipse at 100% 0%,
+            rgba(150, 128, 255, 0.12),
+            transparent 48%
+          ),
+          var(--surface);
+      }
+      .story-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        align-items: center;
+        color: #8993ab;
+        font-size: 0.78rem;
+      }
+      .tag {
+        padding: 5px 10px;
+        border: 1px solid rgba(154, 242, 208, 0.2);
+        border-radius: 999px;
+        color: var(--accent);
+        background: rgba(154, 242, 208, 0.07);
+        font-size: 0.69rem;
+        font-weight: 750;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+      .featured h2 {
+        max-width: 700px;
+        margin: 18px 0 12px;
+        font-size: clamp(1.8rem, 4vw, 2.8rem);
+        line-height: 1.12;
+        letter-spacing: -0.045em;
+      }
+      .featured > p {
+        max-width: 720px;
+        margin: 0;
+        color: var(--muted);
+        font-size: 1rem;
+        line-height: 1.8;
+      }
+      .read-more {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: 20px;
+        color: var(--accent);
+        font-size: 0.88rem;
+        font-weight: 750;
+        text-decoration: none;
+      }
+      .read-more:hover {
+        color: #c3f9e5;
+      }
+      .story-list {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+      }
+      .story {
+        min-height: 230px;
+        padding: 24px;
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        background: var(--surface);
+        transition:
+          transform 0.2s ease,
+          border-color 0.2s ease;
+      }
+      .story:hover {
+        transform: translateY(-3px);
+        border-color: rgba(154, 242, 208, 0.35);
+      }
+      .story h3 {
+        margin: 15px 0 8px;
+        font-size: 1.18rem;
+        line-height: 1.35;
+        letter-spacing: -0.02em;
+      }
+      .story p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.9rem;
+        line-height: 1.7;
+      }
+      footer {
+        border-top: 1px solid var(--line);
+        padding: 24px 0;
+        color: #8b94a9;
+        font-size: 0.82rem;
+      }
+      .footer-inner {
+        display: flex;
+        justify-content: space-between;
+        gap: 18px;
+      }
+      :focus-visible {
+        outline: 3px solid var(--accent);
+        outline-offset: 4px;
+      }
+      @media (max-width: 720px) {
+        .container,
+        .content {
+          width: min(100% - 36px, 560px);
+        }
+        .site-header {
+          height: 70px;
+        }
+        .nav-links {
+          gap: 16px;
+        }
+        .nav-links a {
+          font-size: 0.82rem;
+        }
+        .nav-cta {
+          display: none;
+        }
+        .hero {
+          min-height: 535px;
+        }
+        .hero-content {
+          padding-top: 100px;
+        }
+        .content {
+          padding-top: 35px;
+        }
+        .story-list {
+          grid-template-columns: 1fr;
+          gap: 12px;
+        }
+      }
+      @media (max-width: 420px) {
+        .brand {
+          font-size: 0.82rem;
+        }
+        .brand-mark {
+          width: 31px;
+          height: 31px;
+        }
+        .nav-links {
+          gap: 12px;
+        }
+        .nav-links a {
+          font-size: 0.76rem;
+        }
+        .hero-actions {
+          flex-direction: column;
+          align-items: stretch;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          scroll-behavior: auto !important;
+          transition-duration: 0.01ms !important;
+          animation-duration: 0.01ms !important;
+        }
+        .hero-video {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav container" aria-label="Main navigation">
+        <a
+          class="brand"
+          href="inclassactivity.html"
+          aria-label="Future Form home"
+          ><span class="brand-mark" aria-hidden="true">F</span
+          ><span>FUTURE / FORM</span></a
+        >
+        <div class="nav-links">
+          <a href="inclassactivity.html">Home</a>
+          <a href="technolog_page.html">Technologies</a>
+          <a href="news_tab.html" aria-current="page">News</a>
+          <a class="nav-cta" href="#local"
+            >Latest stories <span aria-hidden="true">&darr;</span></a
+          >
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="page-title">
+        <video
+          class="hero-video"
+          autoplay
+          loop
+          muted
+          playsinline
+          aria-hidden="true"
+        >
+          <source src="gemini_generated_video_643854a2.mp4" type="video/mp4" />
+        </video>
+        <div class="container">
+          <div class="hero-content">
+            <p class="eyebrow">Ideas changing everything</p>
+            <h1 id="page-title">The latest<br /><span>stories.</span></h1>
+            <p class="hero-copy">
+              News and perspectives on the technologies changing how we live,
+              work, and connect.
+            </p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#local"
+                >Read the latest <span aria-hidden="true">&darr;</span></a
+              ><a class="button button-quiet" href="#trending"
+                >Explore trending topics</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="content">
+        <nav class="category-nav" aria-label="News categories">
+          <a href="#local" aria-current="page">Local</a>
+          <a href="#trending">Trending</a>
+        </nav>
+        <label class="story-search" hidden>
+          <span aria-hidden="true">&#9906;</span>
+          <input
+            id="story-search"
+            type="search"
+            placeholder="Search stories or topics..."
+            autocomplete="off"
+            aria-label="Search stories or topics"
+          />
+        </label>
+        <p class="search-status" id="search-status" aria-live="polite"></p>
+        <section class="section" id="local" aria-labelledby="local-heading">
+          <p class="section-label" id="local-heading">Local stories</p>
+          <article class="featured">
+            <div class="story-meta">
+              <span class="tag">Technology</span><span>5 min read</span>
+            </div>
+            <h2>
+              How emerging technology is finding its place in everyday life
+            </h2>
+            <p>
+              From smarter digital tools to new ways of learning and creating,
+              emerging technologies are moving into our communities. Explore the
+              ideas behind these changes and the questions people are asking as
+              they take shape.
+            </p>
+            <a class="read-more" href="technolog_page.html"
+              >Explore the technologies
+              <span aria-hidden="true">&rarr;</span></a
+            >
+          </article>
+        </section>
+        <section
+          class="section"
+          id="trending"
+          aria-labelledby="trending-heading"
+        >
+          <p class="section-label" id="trending-heading">Trending topics</p>
+          <div class="story-list">
+            <article class="story">
+              <div class="story-meta">
+                <span class="tag">Artificial intelligence</span
+                ><span>Explainer</span>
+              </div>
+              <h3>What does it mean for software to learn?</h3>
+              <p>
+                A simple introduction to the systems behind today's AI tools and
+                how people use them.
+              </p>
+              <a class="read-more" href="technolog_page.html"
+                >Read the overview <span aria-hidden="true">&rarr;</span></a
+              >
+            </article>
+            <article class="story">
+              <div class="story-meta">
+                <span class="tag">Extended reality</span><span>In focus</span>
+              </div>
+              <h3>When digital experiences meet the real world</h3>
+              <p>
+                Augmented and virtual reality are opening new possibilities for
+                training, play, and design.
+              </p>
+              <a class="read-more" href="technolog_page.html"
+                >Explore the topic <span aria-hidden="true">&rarr;</span></a
+              >
+            </article>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container footer-inner">
+        <span>Copyright 2026 Future / Form</span
+        ><span>Exploring the technologies shaping tomorrow.</span>
+      </div>
+    </footer>
+    <script>
+      (() => {
+        const searchInput = document.querySelector("#story-search");
+        const searchBox = document.querySelector(".story-search");
+        const status = document.querySelector("#search-status");
+        const storyCards = [...document.querySelectorAll(".featured, .story")];
+        const storySections = [...document.querySelectorAll(".section")];
+        const emptyState = document.createElement("p");
+        let debounceId;
+
+        emptyState.className = "empty-state";
+        emptyState.textContent =
+          "No stories match your search. Try another word.";
+        emptyState.hidden = true;
+        document.querySelector(".content").append(emptyState);
+        searchBox.hidden = false;
+
+        searchInput.addEventListener("input", () => {
+          window.clearTimeout(debounceId);
+          debounceId = window.setTimeout(() => {
+            const query = searchInput.value.trim().toLocaleLowerCase();
+            let visibleCount = 0;
+
+            for (const card of storyCards) {
+              const matches = card.textContent
+                .toLocaleLowerCase()
+                .includes(query);
+              card.hidden = !matches;
+              if (matches) visibleCount += 1;
+            }
+
+            for (const section of storySections) {
+              section.hidden = !section.querySelector(
+                ".featured:not([hidden]), .story:not([hidden])",
+              );
+            }
+
+            emptyState.hidden = visibleCount !== 0;
+            status.textContent = query
+              ? `${visibleCount} ${visibleCount === 1 ? "story" : "stories"} found`
+              : "Search by story title, description, or topic.";
+          }, 120);
+        });
+
+        document.querySelectorAll(".category-nav a").forEach((link) => {
+          link.addEventListener("click", () => {
+            document
+              .querySelectorAll(".category-nav a")
+              .forEach((item) => item.removeAttribute("aria-current"));
+            link.setAttribute("aria-current", "page");
+          });
+        });
+      })();
+    </script>
+  </body>
+</html>

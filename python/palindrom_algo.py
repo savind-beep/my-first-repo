@@ -1,0 +1,14 @@
+L=[]
+R=[]
+L.append("ම")
+L.append("හ")
+L.append("ර")
+L.append("ග")
+L.append("ම")
+print(L)
+R+=L.pop()
+R+=L.pop()
+R+=L.pop()
+R+=L.pop()
+R+=L.pop()
+print(R)

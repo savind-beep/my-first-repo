@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Ticket Booking</title>
+    <style>
+      #int {
+        background-color: rgb(10, 58, 129);
+        padding: 20px;
+        margin: 50px;
+        color: rgb(0, 0, 0);
+        overflow: hidden;
+        border: 2px solid black;
+        border-radius: 10px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center">Movie Night Ticket Booking</h1>
+    <form id="int">
+      <div>
+        <label for="customerName">Customer Name:</label>
+        <input type="text" id="customerName" name="customerName" required />
+      </div>
+      <br />
+      <div>
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required />
+      </div>
+      <br />
+      <div>
+        <label for="movie">Movie:</label>
+        <select id="movie" name="movie">
+          <option value="The Lost City">The Lost City</option>
+          <option value="Midnight Mystery">Midnight Mystery</option>
+          <option value="Future World">Future World</option>
+        </select>
+      </div>
+      <br />
+      <div>
+        <label for="showDate">Show Date:</label>
+        <input type="date" id="showDate" name="showDate" />
+      </div>
+      <br />
+      <div>
+        <label for="numTickets">Number of Tickets:</label>
+        <input type="number" id="numTickets" name="numTickets" min="1" />
+      </div>
+      <br />
+      <div>
+        <label>Seat Type:</label>
+        <input type="radio" id="regular" name="seatType" value="Regular" />
+        <label for="regular">Regular</label>
+        <input type="radio" id="premium" name="seatType" value="Premium" />
+        <label for="premium">Premium</label>
+      </div>
+      <br />
+      <div>
+        <label>Snacks:</label>
+        <input type="checkbox" id="popcorn" name="snacks" value="Popcorn" />
+        <label for="popcorn">Popcorn</label>
+        <input
+          type="checkbox"
+          id="softDrink"
+          name="snacks"
+          value="Soft Drink"
+        />
+        <label for="softDrink">Soft Drink</label>
+        <input type="checkbox" id="nachos" name="snacks" value="Nachos" />
+        <label for="nachos">Nachos</label>
+      </div>
+      <br />
+      <div>
+        <label for="specialRequests">Special Requests:</label><br />
+        <textarea
+          id="specialRequests"
+          name="specialRequests"
+          rows="4"
+          cols="50"
+        ></textarea>
+      </div>
+      <br />
+      <div>
+        <button type="submit">Book Tickets</button>
+        <button type="reset">Clear Form</button>
+      </div>
+    </form>
+  </body>
+</html>

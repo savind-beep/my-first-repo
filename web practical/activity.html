@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Activity 05 - Real Estate Area Pricing</title>
+  </head>
+  <body>
+    <h2>Real Estate Application: Land Property Pricing</h2>
+    <p>Please check the pop-up alert to enter the area and see the price.</p>
+
+    <script>
+      // Prompt the user to enter the area
+      let areaInput = prompt(
+        "Enter the area of the land property (in square meters):",
+      );
+
+      // Convert the input string to a number for calculation
+      let area = parseFloat(areaInput);
+
+      // Check if the input is a valid number
+      if (!isNaN(area) && area > 0) {
+        // Calculate and display price based on the area conditions
+        if (area <= 100) {
+          alert("The price of the land property is $10,000.");
+        } else if (area > 100 && area <= 200) {
+          alert("The price of the land property is $15,000.");
+        } else if (area > 200) {
+          alert("The price of the land property is $20,000.");
+        }
+      } else {
+        alert("Please enter a valid positive number for the area.");
+      }
+    </script>
+  </body>
+</html>

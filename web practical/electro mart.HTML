@@ -1,0 +1,157 @@
+<html>
+  <head>
+    <title>Electonic Shop</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #f3f3f3;
+      }
+
+      .section {
+        width: min(900px, 90%);
+        margin: 30px auto;
+        border: 2px solid black;
+        padding: 30px 20px;
+        text-align: center;
+        background: #ffffff;
+        box-sizing: border-box;
+      }
+
+      h1,
+      h4 {
+        margin: 10px 0;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 25px auto;
+      }
+
+      th,
+      td {
+        border: 1px solid black;
+        padding: 10px;
+        text-align: center;
+      }
+
+      .button-row {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+
+      input[type="button"] {
+        padding: 10px 18px;
+        cursor: pointer;
+        border: 1px solid #222;
+        background: #eaeaea;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="section">
+      <h1>Electro Mart Electronics Shop</h1>
+      <h4>
+        Welcome to Electro Mart. Find quality electronics at affordable prices.
+      </h4>
+
+      <table>
+        <tr>
+          <th colspan="4">Electro Mart Product Information</th>
+        </tr>
+        <tr>
+          <th>Category</th>
+          <th>Product Name</th>
+          <th>Price</th>
+          <th>Offer</th>
+        </tr>
+        <tr>
+          <td>Lighting</td>
+          <td>LED bulb</td>
+          <td>Rs.1200</td>
+          <td>5% off</td>
+        </tr>
+        <tr>
+          <td>Lighting</td>
+          <td>LED tube light</td>
+          <td>Rs.2500</td>
+          <td>10% off</td>
+        </tr>
+        <tr>
+          <td>Electronic</td>
+          <td>Extension cord</td>
+          <td>Rs.1800</td>
+          <td>5% off</td>
+        </tr>
+        <tr>
+          <td colspan="3">Minimum purchase amount</td>
+          <td>Rs.1500</td>
+        </tr>
+      </table>
+
+      <div class="button-row">
+        <input
+          type="button"
+          name="button1"
+          value="Shop Information"
+          onclick="shop_details()"
+        />
+        <input
+          type="button"
+          name="button2"
+          value="Check Budget"
+          onclick="Checkbudget()"
+        />
+        <input
+          type="button"
+          name="button3"
+          value="Check Offer"
+          onclick="Calculateprice()"
+        />
+      </div>
+    </div>
+    <script>
+      function shop_details() {
+        alert(
+          " shop name :Electromart electricl shop \n" +
+            "Minimum purchase amount is Rs.1500 \n" +
+            "Special Discount Available",
+        );
+      }
+
+      function Checkbudget() {
+        var budget = prompt("Enter your budget");
+        if (budget >= 1500) {
+          alert("You can buy products from Electro Mart");
+        } else {
+          alert(
+            "Your budget is insufficient to buy products from Electro Mart",
+          );
+        }
+      }
+
+      function Calculateprice() {
+        var totleprice = prompt("Enter total price");
+        if (totleprice >= 5000) {
+          var discount = totleprice * 0.15; 
+          var finalprice = totleprice - discount;
+          alert("You are eligible for a discount of Rs." + discount);
+          alert("Final price after discount: Rs." + finalprice);
+        } else if (totleprice >= 3000) {
+          var discount = totleprice * 0.1;
+          alert("You are eligible for a discount of Rs." + discount);
+          alert("Final price after discount: Rs." + (totleprice - discount));
+        } else if (totleprice >= 1500) {
+          var discount = totleprice * 0.05;
+          alert("You are eligible for a discount of Rs." + discount);
+          alert("Final price after discount: Rs." + (totleprice - discount));
+        } else {
+          alert("You are not eligible for any discount" + totleprice);
+        }
+      }
+    </script>
+  </body>
+</html>
